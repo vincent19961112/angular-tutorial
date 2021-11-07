@@ -1,0 +1,87 @@
+.edit {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
+    .cardbox {
+        grid-area: span 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            font-size: 50px;
+            font-weight: 800;
+            margin: auto;
+        }
+        .boxinside {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            textarea {
+                height: 120px;
+            }
+        }
+        input {
+            margin-top: 2px;
+            height: 30px;
+            font-size: 25px;
+            line-height: normal;
+            text-align: center;
+            justify-self: center;
+            width: 100%;
+        }
+        .card {
+            margin: 40px;
+            padding: 15px;
+            height: 600px;
+            width: 400px;
+            background-color: ghostwhite;
+            img {
+                height: 200px;
+                width: auto;
+            }
+            button {
+                height: 30px;
+                text-align: center;
+                background-color: white;
+                outline-color: thistle;
+                border: tomato;
+                margin: 5px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.cardicon {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 5%;
+    right: 2%;
+    background-color: blue;
+    border-radius: 50px;
+    transition: 1s ease-in-out;
+    color: white;
+    cursor: pointer;
+    h2 {
+        text-align: center;
+        line-height: 50px;
+    }
+}
+
+.cardicon:hover {
+    background-color: violet;
+}
+
+@media screen and (max-width: 600px) {
+    .product {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 90px 1fr;
+        .cardbox {
+            grid-area: 2/2/2/2;
+        }
+    }
+}

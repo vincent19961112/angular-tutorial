@@ -1,0 +1,48 @@
+<div class="chatroom">
+    <div class="chatbox">
+        <mat-toolbar>
+            <button mat-flat-button type="submit" color="primary" (click)="exitChat()">out</button>
+            <span>進入過聊天室的人:</span>
+            <div class="userslist">
+                <div *ngFor="let users of roomusers|async">
+                    <div class="user">
+                        <div class="{{users.status}}"></div>
+                        <p>{{users.nickname}}</p>
+                    </div>
+                </div>
+            </div>
+        </mat-toolbar>
+        <ul>
+            <ng-container *ngFor="let chat of chats">
+                <ng-container *ngIf="chat.type==='join'||chat.type==='exit'; else message">
+                    <p>{{chat.message}}</p>
+                </ng-container>
+
+                <ng-template #message>
+                    <ng-container *ngIf="chat.nickname!==nickname; else otheruser">
+                        <div class="rightbox">
+                            <h5>{{chat.date}}</h5>
+                            <div class="lirightbox">
+                                <mat-icon>people</mat-icon>
+                                <li>{{chat.message}}</li>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-template #otheruser>
+                        <div class="leftbox">
+                            <h5>{{chat.date}}</h5>
+                            <div class="lileftbox">
+                                <mat-icon>person</mat-icon>
+                                <li>{{chat.message}}</li>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </ng-container>
+        </ul>
+        <form #form='ngForm' (ngSubmit)="SendMessage(form.value.message)" class="input">
+            <input type="text" name="message" [(ngModel)]="message">
+            <button type="submit">send</button>
+        </form>
+    </div>
+</div>

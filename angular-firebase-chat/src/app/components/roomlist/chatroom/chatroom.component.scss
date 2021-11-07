@@ -1,0 +1,160 @@
+    .chatroom {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 1fr;
+        .chatbox {
+            grid-area: span 1/2;
+            background: linear-gradient(90deg, rgba(104, 128, 123, 1) 2%, rgba(165, 176, 236, 1) 24%, rgba(77, 114, 117, 0.9752275910364145) 84%);
+            position: relative;
+            p {
+                margin: 0;
+            }
+            .userslist {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-self: center;
+                .user {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 3px;
+                    .online {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background-color: green;
+                    }
+                    .offline {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background-color: red;
+                    }
+                }
+            }
+        }
+        ul {
+            position: absolute;
+            padding: 25px;
+            bottom: 5%;
+            display: flex;
+            height: 85%;
+            width: 100%;
+            flex-direction: column-reverse;
+            list-style-type: none;
+            overflow-y: auto;
+            li {
+                height: 50px;
+                padding: 5px;
+                text-align: center;
+                line-height: 40px;
+                font-weight: 400;
+                color: white;
+                border-radius: 40px 40px 40px 40px;
+            }
+            .lileftbox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .lirightbox {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+            }
+            .leftbox {
+                align-self: flex-start;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                li {
+                    background-color: rgb(150, 177, 32);
+                }
+            }
+            .rightbox {
+                align-self: flex-end;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                li {
+                    background-color: violet;
+                }
+            }
+        }
+        .input {
+            position: absolute;
+            bottom: 0;
+            height: 50px;
+            display: flex;
+            width: 100%;
+            input {
+                font-size: 20px;
+                font-weight: 320;
+                width: 100%;
+            }
+            button {
+                width: 150px;
+                background-color: yellow;
+                font-size: 20px;
+                color: black;
+                border: 5px solid yellow;
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .chatroom {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 90px 1fr;
+            .chatbox {
+                grid-area: 2/2/2/2;
+                width: 100vw;
+                .userslist {
+                    .user {
+                        .online {
+                            width: 7.5px;
+                            height: 7.5px;
+                        }
+                        .offline {
+                            width: 7.5px;
+                            height: 7.5px;
+                        }
+                    }
+                }
+            }
+            ul {
+                padding: 12.5px;
+                li {
+                    height: 25px;
+                    line-height: 22.5px;
+                }
+                .leftbox {
+                    margin-top: 7.5px;
+                    margin-bottom: 7.5px;
+                }
+            }
+            .input {
+                height: 25px;
+                input {
+                    font-size: 10px;
+                    font-weight: 320;
+                    width: 100%;
+                }
+                button {
+                    width: 75px;
+                    font-size: 10px;
+                }
+            }
+        }
+    }

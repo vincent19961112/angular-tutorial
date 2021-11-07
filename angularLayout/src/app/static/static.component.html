@@ -1,0 +1,89 @@
+<!-- fxlayout  Children with 'layout-align'-->
+<mat-card fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="space-around">
+        <h2>fxLayout={{mainDirection}}</h2>
+        <h2>fxLayoutAlign={{row}}/{{col}}</h2>
+    </div>
+    <div class="box" fxLayout="{{mainDirection}}" fxLayoutAlign="{{row}} {{col}}">
+        <div class="boxIn1">1</div>
+        <div class="boxIn2">2</div>
+        <div class="boxIn3">3</div>
+        <div class="boxIn4">4</div>
+        <div class="boxIn5">5</div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around">
+        <div fxLayout="column">
+            <h5>Layout Direction</h5>
+            <mat-radio-group aria-label="Select an option" *ngFor="let Layout of LayoutDirection">
+                <div *ngFor="let Direction of Layout.direction">
+                    <mat-radio-button [value]="Direction" (click)="getdirection(Direction)">{{Direction}}</mat-radio-button>
+                </div>
+            </mat-radio-group>
+        </div>
+        <div fxLayout="column">
+            <h5>Alignment in Layout Direction (horizontal)</h5>
+            <mat-radio-group aria-label="Select an option" *ngFor="let Axis of fxLayoutAlign">
+                <div *ngFor="let axis of Axis.MainAxis">
+                    <mat-radio-button [value]="axis" (click)="getRow(axis)">{{axis}}</mat-radio-button>
+                </div>
+            </mat-radio-group>
+        </div>
+        <div fxLayout="column">
+            <h5>Alignment in Perpendicular Direction (vertical)</h5>
+            <mat-radio-group aria-label="Select an option" *ngFor="let Axis of fxLayoutAlign">
+                <div *ngFor="let axis of Axis.CrossAxis">
+                    <mat-radio-button [value]="axis" (click)="getColumn(axis)">{{axis}}</mat-radio-button>
+                </div>
+            </mat-radio-group>
+        </div>
+    </div>
+</mat-card>
+<!-- layout fxfill -->
+<mat-card fxLayout="column" fxLayoutAlign="start start">
+    <h2>Layout Fill</h2>
+    <p>Using 'fxFill' to fill available width and height of parent container</p>
+    <div class="boxfxfill" fxLayout="row" fxLayoutAlign="start start" fxFill>
+        <div class="boxA">A</div>
+        <div class="boxB" fxFill="80%">B</div>
+    </div>
+</mat-card>
+<!-- layout Gap -->
+<mat-card fxLayout="column" fxLayoutAlign="start start">
+    <h2>Layout Gap</h2>
+    <p>Using 'fxLayoutGap' to create a grid-like layout</p>
+    <div class="boxfxGap" fxLayout="{{fxFlexWrap}} wrap" fxLayoutGap="10px" (click)="togglefxFlexWrap()">
+        <div class="boxGrid" fxflex='25%'>A</div>
+        <div class="boxGrid" fxflex='25%'>B</div>
+        <div class="boxGrid" fxflex='25%'>C</div>
+        <div class="boxGrid" fxflex='25%'>D</div>
+        <div class="boxGrid" fxflex='25%'>E</div>
+        <div class="boxGrid" fxflex='25%'>F</div>
+        <div class="boxGrid" fxflex='25%'>G</div>
+    </div>
+</mat-card>
+<!-- fxFlex -->
+<mat-card fxLayout="column" fxLayoutAlign="start start">
+    <h2>'Flex' with Layout-Wrap</h2>
+    <p>Using "layout-wrap" to wrap positioned items within a layout container</p>
+    <div [fxLayout]="fxFlex" class="boxfxFlex" (click)="togglefxFlex()">
+        <div class="fxFlexboxA" fxFlex>fxFlex</div>
+        <div class="fxFlexboxB" fxFlex="60">fxFlex="60"</div>
+        <div class="fxFlexboxC" fxFlex="20">fxFlex="20"</div>
+    </div>
+</mat-card>
+
+<!-- fxFlex Wrap -->
+<mat-card fxLayout="column">
+    <h2>'Flex' with Layout-Wrap</h2>
+    {{fxFlexWrap}}
+    <p>Using "layout-wrap" to wrap positioned items within a layout container</p>
+    <div fxLayout="{{fxFlexWrap}} wrap" fxHide="false" class="boxfxFlex" (click)="togglefxFlexWrap()">
+        <div class="fxwrapA" fxFlex="30%">fxFlex="30"</div>
+        <div class="fxwrapB" fxFlex="45%">fxFlex="45"</div>
+        <div class="fxwrapC" fxFlex="19%">fxFlex="19"</div>
+        <div class="fxwrapD" fxFlex="33%">fxFlex="33"</div>
+        <div class="fxwrapE" fxFlex="67%">fxFlex="67"</div>
+        <div class="fxwrapF" fxFlex="50%">fxFlex="50"</div>
+        <div class="fxwrapG" fxFlex>fxFlex</div>
+    </div>
+</mat-card>

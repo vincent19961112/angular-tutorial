@@ -1,0 +1,45 @@
+.loginbg {
+    background: linear-gradient(#fff, #333);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    mat-card {
+        height: 600px;
+        width: 600px;
+        border-radius: 24px;
+        transition: 0.5s ease-in-out;
+        box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset 5px 5px 5px rgba(255, 255, 255, 0.05), 5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+        mat-card-header {
+            justify-self: center;
+            align-self: center;
+            mat-card-title {
+                margin-top: 5px;
+                font-size: 2.5em;
+            }
+            mat-card-subtitle {
+                margin-top: 5px;
+                font-size: 1.5em;
+            }
+        }
+        mat-card-content {
+            form {
+                margin-top: 20px;
+                padding: 30px;
+                mat-form-field {
+                    width: 100%;
+                    font-size: 1.2em;
+                    font-weight: 400;
+                    font-style: italic;
+                }
+            }
+            button {
+                margin-top: 40px;
+                height: 50px;
+                width: 100%;
+            }
+        }
+    }
+}

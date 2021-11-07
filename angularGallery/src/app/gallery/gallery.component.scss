@@ -1,0 +1,70 @@
+     .gallery {
+         background: linear-gradient(#fff, #333);
+         position: relative;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         h1 {
+             padding: 50px;
+             font-size: 25px;
+             font-weight: 800;
+             font-style: italic;
+             text-align: start;
+         }
+         .layout {
+             position: relative;
+             width: 100%;
+             display: flex;
+             flex-direction: row;
+             flex-wrap: wrap;
+             justify-content: center;
+             align-items: flex-start;
+             .card {
+                 margin: 20px;
+                 height: 440px;
+                 width: 320px;
+                 position: relative;
+                 border-radius: 15px;
+                 transition: 1s ease-in-out;
+                 box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset 5px 5px 5px rgba(255, 255, 255, 0.05), 5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+                 .matcard {
+                     position: absolute;
+                     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                     border-radius: 15px;
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: center;
+                     align-items: center;
+                     transition: 0.5s;
+                     .image {
+                         height: 300px;
+                         width: 300px;
+                         transition: 0.5s ease-in-out;
+                     }
+                     button {
+                         position: absolute;
+                         width: 50%;
+                         bottom: 5%;
+                         left: 50%;
+                         text-align: center;
+                         background: #03a9f4;
+                         transform: translateX(-50%);
+                         transition: 0.3s ease-in-out;
+                     }
+                 }
+                 .matcard:hover {
+                     background: linear-gradient(45deg, #b95ce4, #4f29cd);
+                     .image {
+                         transform: translateY(-50px);
+                         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+                     }
+                     button {
+                         width: 100%;
+                         background: #ff568f;
+                     }
+                 }
+             }
+         }
+     }

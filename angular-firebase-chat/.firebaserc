@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-firebase-chat-e5039": {
+      "hosting": {
+        "angular-firebase-chat": [
+          "angular-firebase-chat-e5039"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-firebase-blog-dcf92"
+  }
+}

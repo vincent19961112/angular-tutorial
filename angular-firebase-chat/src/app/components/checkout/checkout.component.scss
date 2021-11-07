@@ -1,0 +1,90 @@
+    .roomlist {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 1fr;
+        .chatbox {
+            grid-area: span 1/2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .users {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2px;
+            }
+        }
+        .card {
+            position: relative;
+            height: 800px;
+            width: 1200px;
+            background-color: burlywood;
+            h1 {
+                position: absolute;
+                top: 5%;
+                left: 2%;
+                align-self: flex-start;
+                margin-top: 20px;
+                font-size: 50px;
+                font-weight: 800;
+                font-style: italic;
+                color: white;
+            }
+            h2 {
+                position: absolute;
+                top: 10%;
+                left: 2%;
+                align-self: flex-start;
+                margin-top: 20px;
+                font-size: 20px;
+                font-weight: 800;
+                font-style: italic;
+                color: white;
+            }
+            form {
+                position: absolute;
+                top: 25%;
+                left: 5%;
+                width: 600px;
+                mat-form-field {
+                    width: 100%;
+                }
+                .SelectCity {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .roomlist {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 90px 1fr;
+            .chatbox {
+                grid-area: 2/2/2/2;
+                width: 100vw;
+                .users {
+                    width: 25px;
+                    height: 25px;
+                    font-size: 0.6px;
+                }
+            }
+            .card {
+                height: 500px;
+                max-width: 400px;
+                h1 {
+                    margin-top: 10px;
+                    font-size: 25px;
+                }
+                h2 {
+                    margin-top: 10px;
+                    font-size: 10px;
+                }
+                form {
+                    width: 300px;
+                }
+            }
+        }
+    }

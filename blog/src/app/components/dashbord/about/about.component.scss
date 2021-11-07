@@ -1,0 +1,28 @@
+@import '../../../app.component.scss';
+$image:url('../../../../assets/image/keith-misner-h0Vxgz5tyXA-unsplash.jpg');
+.about {
+    position: relative;
+    height: Height(100);
+    background-image: BackgroundImage($image);
+    @include backgroundSet();
+    @include FlexCCC();
+    h1 {
+        @include PN55();
+        top: 20%
+    }
+    .about-card {
+        @include FlexRCC();
+        mat-card {
+            margin: Margin(3);
+            img {
+                border-radius: 0;
+                transition: 0.5s;
+            }
+            &:hover {
+                img {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

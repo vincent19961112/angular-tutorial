@@ -1,0 +1,26 @@
+<mat-toolbar>
+    <span>Product</span>
+</mat-toolbar>
+<div class="product" fxLayout="row" fxFlexAlign="center center">
+    <div class="list" fxFlex="15%">
+        <h1>Color</h1>
+        <div class="listitem" *ngFor="let product of products$|async">
+            <div>{{product.color}}</div>
+        </div>
+    </div>
+    <div class="card" fxFlex="85%">
+        <div class="cardcontent" fxFlex.xs="calc(100%-30px)" fxFlex.md="calc(33%-30px)" fxFlex.sm="calc(50%-30px)" fxFlex.lg="calc(20%-30px)" fxFlex.xl="calc(20%-30px)" *ngFor="let product of products$|async">
+            <div class="cardtitle">
+                <div>{{product.productName}}</div>
+            </div>
+            <div class="carddetail">
+                <img src="{{product.Image}}" alt="{{product.Image}}" srcset="">
+                <p>{{product.productDescription}}</p>
+            </div>
+            <div class="cardbutton">
+                <button mat-flat-button (click)="addtoCart(product)">add to Cart</button>
+                <button mat-flat-button (click)="gotodetail(product)">Enter</button>
+            </div>
+        </div>
+    </div>
+</div>

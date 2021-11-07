@@ -1,0 +1,431 @@
+@import '../../app.component.scss';
+.about {
+    @include Gird;
+}
+
+.card {
+    grid-area: span 1/2;
+    background-image: url('../../../assets/image/keith-misner-h0Vxgz5tyXA-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include FlexCCC;
+    overflow: hidden;
+    // letterout
+    .letterout {
+        position: relative;
+        top: -100%;
+        left: -100%;
+        background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+        height: 500px;
+        width: 900px;
+        transform: rotate(-15deg);
+        animation: letterout 1s forwards;
+        animation-delay: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        overflow: hidden;
+        .letteroutheader {
+            position: relative;
+            background: linear-gradient(to left, #c7c7c7, #e7e7e7);
+            border-bottom-left-radius: 70px;
+            border-bottom-right-radius: 70px;
+            width: 100%;
+            height: 220px;
+            .letterouthead {
+                position: absolute;
+                background-color: red;
+                border-radius: 50%;
+                bottom: -20px;
+                left: 50%;
+                width: 50px;
+                height: 50px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    //letter
+    .letter {
+        position: relative;
+        height: 500px;
+        width: 900px;
+        top: -100%;
+        left: -50px;
+        background: linear-gradient(to left, #f9f9f9, #d9d9d9);
+        animation: letter 1s forwards;
+        animation-delay: 1.5s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        .letterheader {
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            background-color: rgb(219, 240, 235);
+            border-color: blue;
+            border-width: 5px;
+            border-style: double;
+            outline-style: inset;
+            outline-width: 3px;
+            outline-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        p {
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            font-size: 2.5rem;
+            line-height: normal;
+            font-weight: 750;
+        }
+        h4 {
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            font-size: 4.5rem;
+            font-weight: 750;
+        }
+    }
+    // cup
+    .cup {
+        position: fixed;
+        bottom: 20%;
+        right: -50%;
+        height: 150px;
+        width: 150px;
+        background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+        border-radius: 0 0 50px 50px;
+        animation: cup 1s forwards;
+        animation-delay: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        .cupheader {
+            position: absolute;
+            top: -20px;
+            height: 40px;
+            width: 100%;
+            border-radius: 50%;
+            background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .cupinside {
+                position: absolute;
+                top: 3px;
+                height: 40px;
+                width: 140px;
+                border-radius: 50%;
+                background: linear-gradient(to left, #f9f9f9, #d9d9d9);
+                overflow: hidden;
+                .tea {
+                    position: absolute;
+                    top: 10px;
+                    height: 40px;
+                    width: 140px;
+                    border-radius: 50%;
+                    background: linear-gradient(to right, rgb(14, 172, 80), rgb(6, 129, 57));
+                }
+            }
+            .vapour {
+                position: relative;
+                display: flex;
+                z-index: 1;
+                padding: 0 20px;
+                span {
+                    position: relative;
+                    bottom: 15px;
+                    display: block;
+                    margin: 0 2px 15px;
+                    min-width: 4px;
+                    height: 50px;
+                    background: #fff;
+                    border-radius: 50%;
+                    animation: animate 5s linear infinite;
+                    opacity: 0;
+                    filter: blur(8px);
+                    animation-delay: calc(var(--i)*-0.5s);
+                }
+            }
+        }
+        .cuphand {
+            position: absolute;
+            top: 22px;
+            right: -28px;
+            height: 90px;
+            width: 80px;
+            border: 15px solid #dcdcdc;
+            border-left: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-radius: 50%;
+            transform: rotate(40deg);
+        }
+    }
+    .plate {
+        position: absolute;
+        bottom: 13%;
+        right: -50%;
+        height: 100px;
+        width: 350px;
+        transform: translateY(-15%);
+        border-radius: 50%;
+        background: linear-gradient(to right, #f9f9f9, #e7e7e7);
+        box-shadow: 0 35px 35px rgba(0, 0, 0, 0.2);
+        animation: plate 1s forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .plate::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        background: linear-gradient(to left, #f9f9f9, #e7e7e7);
+    }
+    .plate::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        background: radial-gradient(rgba(0, 0, 0, 0.2)25%, transparent, transparent);
+        border-radius: 50%;
+    }
+}
+
+@keyframes letter {
+    61% {
+        top: 0%;
+    }
+    100% {
+        top: -20%;
+    }
+}
+
+@keyframes letterout {
+    61% {
+        left: 0%;
+        top: 0%;
+    }
+    100% {
+        left: -10%;
+        top: 5%;
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-150px) scaleX(5);
+    }
+    100% {
+        transform: translateY(-300px) scaleY(10);
+    }
+}
+
+@keyframes cup {
+    0% {
+        opacity: 0;
+        right: 5%;
+    }
+    61% {
+        opacity: 0.5;
+        right: 10%;
+    }
+    100% {
+        opacity: 1;
+        right: 7%;
+    }
+}
+
+@keyframes plate {
+    0% {
+        opacity: 0;
+        right: -2%;
+    }
+    61% {
+        opacity: 0.5;
+        right: 2%;
+    }
+    100% {
+        opacity: 1;
+        right: 2%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0px 1fr;
+    }
+    .card {
+        grid-area: 2/2/2/2;
+        width: 100vw;
+        .letterout {
+            height: 250px;
+            width: 450px;
+            animation: Mdletterout 1s forwards;
+            .letteroutheader {
+                width: 100%;
+                height: 110px;
+                .letterouthead {
+                    bottom: -20px;
+                    left: 50%;
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+        //letter
+        .letter {
+            height: 250px;
+            width: 450px;
+            animation: Mdletter 1s forwards;
+            .letterheader {
+                width: 50px;
+                height: 50px;
+            }
+            p {
+                font-size: 1.25rem;
+            }
+            h4 {
+                font-size: 2.25rem;
+                font-weight: 750;
+            }
+        }
+        // cup
+        .cup {
+            height: 75px;
+            width: 75px;
+            border-radius: 0 0 25px 25px;
+            animation: Mdcup 1s forwards;
+            .cupheader {
+                height: 20px;
+                .cupinside {
+                    top: 3px;
+                    height: 20px;
+                    width: 70px;
+                    .tea {
+                        top: 10px;
+                        height: 20px;
+                        width: 70px;
+                    }
+                }
+                .vapour {
+                    padding: 0 10px;
+                    span {
+                        bottom: 15px;
+                        margin: 0 1px 7.5px;
+                        min-width: 2px;
+                        height: 25px;
+                        animation: Mdanimate 5s linear infinite;
+                        filter: blur(4px);
+                        animation-delay: calc(var(--i)*-0.5s);
+                    }
+                }
+            }
+            .cuphand {
+                height: 45px;
+                width: 40px;
+                border: 7.5px solid #dcdcdc;
+                border-left: 12.25px solid transparent;
+                border-bottom: 12.25px solid transparent;
+            }
+        }
+        .plate {
+            height: 50px;
+            width: 175px;
+            box-shadow: 0 17.5px 17.5px rgba(0, 0, 0, 0.2);
+            animation: Mdplate 1s forwards;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+        }
+        .plate::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+        }
+        .plate::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+        }
+    }
+    @keyframes Mdletter {
+        61% {
+            top: 0%;
+        }
+        100% {
+            top: -20%;
+        }
+    }
+    @keyframes Mdletterout {
+        61% {
+            left: 0%;
+            top: 0%;
+        }
+        100% {
+            left: -10%;
+            top: 5%;
+        }
+    }
+    @keyframes Mdanimate {
+        0% {
+            transform: translateY(0) scaleX(1);
+            opacity: 0;
+        }
+        15% {
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(-150px) scaleX(5);
+        }
+        100% {
+            transform: translateY(-300px) scaleY(10);
+        }
+    }
+    @keyframes Mdcup {
+        0% {
+            opacity: 0;
+            right: 5%;
+        }
+        61% {
+            opacity: 0.5;
+            right: 10%;
+        }
+        100% {
+            opacity: 1;
+            right: 7%;
+        }
+    }
+    @keyframes Mdplate {
+        0% {
+            opacity: 0;
+            right: -2%;
+        }
+        61% {
+            opacity: 0.5;
+            right: 2%;
+        }
+        100% {
+            opacity: 1;
+            right: 2%;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="productItem.productImageUrl" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{productItem.productTitle}}</h5>
+        <p class="card-text">{{productItem.productContentText}}</p>
+    </div>
+
+    <div class="card-body">
+        <button class="btn btn-outline-primary mr-2" (click)="handleAddToCart()">add to cart</button>
+        <button class="btn btn-outline-primary">detail</button>
+    </div>
+</div>

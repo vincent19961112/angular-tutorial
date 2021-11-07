@@ -1,0 +1,10 @@
+<div class="roomlist">
+    <div class="chatbox">
+        <form #form='ngForm' class="card">
+            <h1>聊天室</h1>
+            <h3>房門名字</h3>
+            <input type="text" name="roomname" [(ngModel)]="roomname">
+            <button type="submit" (click)="addroomname(roomname)">進入聊天</button>
+        </form>
+    </div>
+</div>

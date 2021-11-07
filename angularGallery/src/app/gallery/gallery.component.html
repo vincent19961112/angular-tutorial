@@ -1,0 +1,11 @@
+<div class="gallery">
+    <h1>Lastest photo</h1>
+    <div class="layout">
+        <div class="card" *ngFor="let image of images ">
+            <div fxFill="25%" class="matcard">
+                <img src="{{image.url}}" alt="{{image.name}}" class="image">
+                <button mat-raised-button [routerLink]="['/gallery/',image.$Key]">detail</button>
+            </div>
+        </div>
+    </div>
+</div>

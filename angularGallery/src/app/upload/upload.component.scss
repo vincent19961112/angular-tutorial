@@ -1,0 +1,58 @@
+.uploadbg {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(#fff, #333);
+    .upload {
+        position: relative;
+        background-color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset 5px 5px 5px rgba(255, 255, 255, 0.05), 5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+        height: 500px;
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease-in-out;
+        .upload-file {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            .icon {
+                margin-right: 20px;
+                font-size: 50px;
+            }
+        }
+        .hidden-input {
+            visibility: hidden;
+        }
+        button {
+            width: 100%;
+            background-color: rebeccapurple;
+        }
+    }
+    .upload:hover {
+        border-radius: 15px;
+        background-color: rgb(114, 110, 99);
+        .upload-file {
+            .icon {
+                margin-right: 20px;
+                font-size: 50px;
+            }
+        }
+        .hidden-input {
+            background-color: rgb(114, 110, 99);
+            visibility: hidden;
+        }
+        button {
+            width: 100%;
+            background-color: rgb(158, 47, 102);
+        }
+    }
+}

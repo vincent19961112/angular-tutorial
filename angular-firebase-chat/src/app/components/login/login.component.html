@@ -1,0 +1,69 @@
+<mat-grid-list gutterSize="54px" cols="1" rowHeight="100vh">
+    <mat-grid-tile colspan="1">
+        <ng-container *ngIf="SignUp; else SignIn">
+            <form #form="ngForm" [formGroup]="FormGroup" (ngSubmit)="onSubmit(form)" id="Height404">
+                <h1><strong>vFc</strong> FoodStore</h1>
+                <h5>Wellcome</h5>
+                <h2>{{errors}}</h2>
+                <!-- email -->
+                <mat-form-field>
+                    <mat-label>Enter Your Email</mat-label>
+                    <input matInput [(ngModel)]="email" placeholder="pat@example.com" formControlName="email" required>
+                    <mat-error *ngIf="FormGroup.controls.email.hasError('required')">You must Enter a Value</mat-error>
+                    <mat-error *ngIf="FormGroup.controls.email.hasError('email')">Not a Valid Email</mat-error>
+                </mat-form-field>
+                <!-- password -->
+                <mat-form-field>
+                    <mat-label>Enter Your Password</mat-label>
+                    <input matInput [(ngModel)]="password" formControlName="password" [type]="hide ? 'password' : 'text'" required>
+                    <mat-error *ngIf="FormGroup.controls.password.hasError('required')">You Must Enter Password</mat-error>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+                </mat-form-field>
+                <!-- password -->
+                <mat-form-field>
+                    <mat-label>Enter Again Password</mat-label>
+                    <input matInput [(ngModel)]="AgainPassword" formControlName="AgainPassword" [type]="hide ? 'password' : 'text'" required>
+                    <mat-hint *ngIf="AgainPassword!=password">Password not Match</mat-hint>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide AgainPassword'" [attr.aria-pressed]="hide">
+
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+                </mat-form-field>
+                <button type="submit" class="login" (click)='signUp(form)' mat-raised-button>Confirm</button>
+                <button class="signIn" (click)='GoSignIn()' mat-raised-button>Go Sign Up</button>
+                <button class="googleLogin" (click)="GoogleLogin()" mat-raised-button>login with Google</button>
+            </form>
+        </ng-container>
+        <ng-template #SignIn>
+            <form #form="ngForm" [formGroup]="FormGroup" (ngSubmit)="onSubmit(form)" id="Height404">
+                <h1><strong>vFc</strong> foodstore</h1>
+                <h5>wellcome </h5>
+                <h2>{{errors}}</h2>
+                <!-- email -->
+                <mat-form-field>
+                    <mat-label>Enter Your Email</mat-label>
+                    <input matInput [(ngModel)]="email" placeholder="pat@example.com" formControlName="email" required>
+                    <mat-error *ngIf="FormGroup.controls.email.hasError('required')">You must enter a value</mat-error>
+                    <mat-error *ngIf="FormGroup.controls.email.hasError('email')">Not a valid Email</mat-error>
+                </mat-form-field>
+                <!-- password -->
+                <mat-form-field>
+                    <mat-label>Enter Your Password</mat-label>
+                    <input matInput [(ngModel)]="password" formControlName="password" [type]="hide ? 'password' : 'text'" required>
+                    <mat-error *ngIf="FormGroup.controls.password.hasError('required')">You must enter Password</mat-error>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+
+                </mat-form-field>
+                <button type="submit" class="login" [disabled]="FormGroup.controls.password.hasError('required')||FormGroup.controls.email.hasError('required')||FormGroup.controls.email.hasError('email')" (click)="login(form)" mat-raised-button>Login in Email</button>
+                <button class="signIn" (click)='GoSignUp()' mat-raised-button>Sign Up</button>
+                <button class="googleLogin" (click)="GoogleLogin()" mat-raised-button>login with Google</button>
+            </form>
+        </ng-template>
+
+
+    </mat-grid-tile>
+</mat-grid-list>

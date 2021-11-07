@@ -1,0 +1,9 @@
+<div class="food">
+    <div class="food-card">
+        <mat-grid-list gutterSize='15px' cols="6" rowHeight="100px">
+            <mat-grid-tile [routerLink]="['/product']" *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.backgroundImage]="tile.backgroundImage">
+                <p mat-raised-button>{{tile.text}}</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

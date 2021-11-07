@@ -1,0 +1,177 @@
+    $baseFontSize: 10px;
+    $baseWidthSize: 100px;
+    $baseHeightSize: 1vh;
+    $baseMarginSize: 10px;
+    $baseColor:blue;
+    @function BackgroundImage($Image) {
+        @return $Image;
+    }
+    
+    @function Height($Height:1) {
+        @return $Height*$baseHeightSize;
+    }
+    
+    @function Width($Width:1) {
+        @return $Width*$baseWidthSize;
+    }
+    
+    @function Margin($Margin:1) {
+        @return $Margin*$baseMarginSize;
+    }
+    
+    @function Color($Color:#ffffff) {
+        @return $Color;
+    }
+    
+    @function BGColor($Color:'#673ab7') {
+        @return $Color;
+    }
+    
+    @function fontSize($count: 1) {
+        @return $count*$baseFontSize;
+    }
+    
+    @mixin backgroundSet {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    @mixin PN55 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    @mixin FlexRCC {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @mixin FlexRSS {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    @mixin FlexREE {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    
+    @mixin FlexRCC {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @mixin FlexRSC {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    @mixin FlexREC {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    @mixin FlexCCC {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @mixin FlexCSS {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    @mixin FlexCEE {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    
+    @mixin FlexCSC {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    @mixin FlexCCS {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    @mixin FlexCEC {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    @mixin MD {
+        @media screen and (max-width: 540px) {
+            button {
+                margin: Margin(0.5);
+                font-size: fontSize(0.5);
+                mat-icon {
+                    font-size: fontSize(2);
+                }
+            }
+        }
+        @media screen and (min-width: 540px) and (max-width: 720px) {
+            button {
+                margin: Margin(0.5);
+                font-size: fontSize(1);
+                mat-icon {
+                    font-size: fontSize(2);
+                }
+            }
+        }
+        @media screen and (min-width: 720px) and (max-width: 960px) {
+            button {
+                margin: Margin(0.5);
+                font-size: fontSize(1.5);
+                mat-icon {
+                    font-size: fontSize(2);
+                }
+            }
+        }
+        @media screen and (min-width: 960px) and (max-width: 1140px) {
+            button {
+                margin: Margin(0.5);
+                font-size: fontSize(1.5);
+                mat-icon {
+                    font-size: fontSize(2);
+                }
+            }
+        }
+        @media screen and (min-width: 1140px) {
+            button {
+                margin: Margin(0.5);
+                font-size: fontSize(1.5);
+                mat-icon {
+                    font-size: fontSize(2);
+                }
+            }
+        }
+    }

@@ -1,0 +1,11 @@
+<div class="uploadbg">
+    <div class="upload">
+        <label for="uploadPicture" class="upload-file">
+            <mat-icon class="icon">add_a_photo</mat-icon>
+</label>
+        <input type="file" id="uploadPicture" class="hidden-input" accept="image/jpeg, .jpeg, image/png, .png, image/pjpeg, .jpg">
+        <img [src]="files" alt="" srcset="">
+        <mat-progress-bar mode="determinate" [value]="10"></mat-progress-bar>
+        <button mat-raised-button (click)="uploadFiles()">Upload Image</button>
+    </div>
+</div>

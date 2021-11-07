@@ -1,0 +1,183 @@
+.home {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: url('../../../assets/Coventicimages/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    user-select: none;
+    .thankcard {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 500px;
+        width: 500px;
+        border: blueviolet 5px solid;
+        border-radius: 50%;
+        background: linear-gradient(rgba(185, 185, 185, 0.931), rgba(202, 202, 202, 0.933));
+        opacity: 0.8;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        h1 {
+            font-size: 50px;
+            font-weight: 800;
+            animation: thankcardin 2.5s linear 1;
+        }
+        button {
+            margin-top: 1.5rem;
+            color: white;
+            font-size: 50px;
+            font-weight: 700;
+            border-radius: 25px;
+            border-inline: 5px blueviolet solid;
+            transition: 0.5s;
+            animation: thankcardbutton 2.5s linear 1;
+        }
+        button:hover {
+            color: blue;
+            border-inline: 7px blueviolet solid;
+        }
+        button:focus {
+            outline: none;
+            background-color: blueviolet;
+        }
+        animation: thankcard 2.5s linear 1;
+    }
+    .thankcard:hover {
+        border: blueviolet 15px solid;
+    }
+}
+
+.bubble img {
+    width: 50px;
+    animation: bubble 7s linear infinite;
+}
+
+.bubble {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -70px;
+}
+
+@keyframes thankcardin {
+    0% {
+        font-size: 5px;
+    }
+    35% {
+        font-size: 20px;
+    }
+    65% {
+        font-size: 35px;
+    }
+    100% {
+        font-size: 50px;
+    }
+}
+
+@keyframes thankcardbutton {
+    0% {
+        font-size: 5px;
+    }
+    35% {
+        font-size: 20px;
+    }
+    65% {
+        font-size: 35px;
+    }
+    100% {
+        font-size: 50px;
+    }
+}
+
+@keyframes thankcard {
+    0% {
+        border: white 180px solid;
+    }
+    35% {
+        border: black 150px solid;
+    }
+    65% {
+        border: yellowgreen 50px solid;
+    }
+    100% {
+        border: blue 5px solid;
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80vh);
+        opacity: 0;
+    }
+}
+
+.bubble img:nth-child(1) {
+    animation-delay: 2s;
+}
+
+.bubble img:nth-child(2) {
+    width: 60px;
+    animation-delay: 7s;
+}
+
+.bubble img:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.bubble img:nth-child(4) {
+    width: 30px;
+    animation-delay: 2.5s;
+}
+
+.bubble img:nth-child(5) {
+    animation-delay: 1.8s;
+}
+
+.bubble img:nth-child(6) {
+    width: 25px;
+    animation-delay: 4.5s;
+}
+
+.bubble img:nth-child(7) {
+    animation-delay: 6s;
+}
+
+.bubble img:nth-child(8) {
+    width: 44px;
+    animation-delay: 5s;
+}
+
+.bubble img:nth-child(9) {
+    width: 50px;
+    animation-delay: 1s;
+}
+
+.bubble img:nth-child(10) {
+    width: 44px;
+    animation-delay: 3s;
+}
+
+.bubble img:nth-child(11) {
+    width: 22px;
+    animation-delay: 3.3s;
+}

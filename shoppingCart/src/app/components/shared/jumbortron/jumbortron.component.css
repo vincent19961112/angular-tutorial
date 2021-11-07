@@ -1,0 +1,7 @@
+.jumbotronvh {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: 900px;
+    height: calc(100vh - (2 * 28) px);
+}

@@ -1,0 +1,523 @@
+.product {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
+    h1 {
+        opacity: 0;
+        font-size: 0px;
+        font-weight: 100;
+        margin-top: 20px;
+        grid-area: span 1/2;
+        text-align: center;
+        animation: heading 1s ease-in-out forwards;
+        animation-iteration-count: 1;
+    }
+    button {
+        opacity: 0;
+        margin-top: 20px;
+        animation: button 1s ease-in-out forwards;
+        animation-iteration-count: 1;
+        animation-delay: 0.5s;
+    }
+    input {
+        opacity: 0;
+        margin-top: 40px;
+        grid-area: span 1/2;
+        height: 50px;
+        font-size: 45px;
+        line-height: normal;
+        text-align: center;
+        justify-self: center;
+        width: 0px;
+        animation: input 1s ease-in-out forwards;
+        animation-delay: 0.5s;
+        animation-iteration-count: 1;
+    }
+    .cardbox {
+        grid-area: span 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            margin: auto;
+        }
+        .addFaker {
+            height: 50px;
+            width: 200px;
+            margin-top: 25px;
+            font-size: 2.5rem;
+            line-height: 50px;
+            text-align: center;
+            background-color: red;
+            color: white;
+            border-radius: 25px;
+        }
+        mat-form-field {
+            opacity: 0;
+            margin-top: 40px;
+            width: 0px;
+            animation: select 1s ease-in-out forwards;
+            animation-delay: 0.5s;
+            animation-iteration-count: 1;
+        }
+        .boxinside {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            animation: cardAll 2s forwards;
+            opacity: 0;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            h2 {
+                opacity: 0;
+                animation: heading2 1s forwards ease-in-out;
+                animation-delay: 0.5s;
+                animation-iteration-count: 1;
+            }
+            p {
+                opacity: 0;
+                animation: ptag 1s forwards ease-in-out;
+                animation-delay: 0.5s;
+                animation-iteration-count: 1;
+            }
+        }
+        .card {
+            opacity: 0;
+            margin: 40px;
+            padding: 15px;
+            height: 600px;
+            width: 400px;
+            background-color: ghostwhite;
+            animation: card 1s ease-in-out;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 0.5s;
+        }
+        img {
+            opacity: 0;
+            height: 0px;
+            width: auto;
+            animation: image 1s forwards ease-in-out;
+            animation-delay: 0.5s;
+            animation-iteration-count: 1;
+        }
+        button {
+            height: 30px;
+            text-align: center;
+            background-color: white;
+            outline-color: thistle;
+            border: tomato;
+            margin: 5px;
+            width: 100%;
+        }
+    }
+}
+
+@keyframes heading {
+    0% {
+        opacity: 0;
+        font-size: 10px;
+        font-weight: 200;
+    }
+    61% {
+        font-size: 20px;
+        font-weight: 420;
+    }
+    100% {
+        opacity: 1;
+        font-size: 50px;
+        font-weight: 800;
+    }
+}
+
+@keyframes heading2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ptag {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        font-size: 1.0rem;
+    }
+}
+
+@keyframes input {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 600px;
+    }
+}
+
+@keyframes select {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 600px;
+    }
+}
+
+@keyframes cardAll {
+    0% {
+        opacity: 0;
+    }
+    61% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes card {
+    0% {
+        height: 2px;
+        opacity: 0;
+    }
+    61% {
+        height: 2px;
+        width: 400px;
+    }
+    100% {
+        opacity: 1;
+        height: 600px;
+        width: 400px;
+    }
+}
+
+@keyframes image {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 200px;
+        width: auto;
+    }
+}
+
+@keyframes button {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+mat-icon {
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    height: 80px;
+    width: 80px;
+    font-size: 50px;
+    color: rgb(31, 177, 221);
+    cursor: pointer;
+    text-align: center;
+    line-height: 75px;
+    transition: 0.5s ease-in-out;
+    border: 7px solid rgb(20, 92, 224);
+    background-color: rgb(13, 51, 121);
+    border-radius: 50%;
+}
+
+mat-icon:hover {
+    color: rgb(77, 115, 185);
+    border: 3px solid rgb(23, 180, 228);
+    background-color: rgb(15, 17, 121);
+}
+
+.cart {
+    position: fixed;
+    height: 800px;
+    width: 900px;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(40, 52, 117, 1) 40%, rgba(23, 159, 148, 1) 42%, rgba(9, 113, 121, 0.9752275910364145) 84%);
+    overflow-y: scroll;
+    .cartTitle {
+        display: grid;
+        grid-template-columns: 40% 10% 10% 20% 20%;
+        grid-template-rows: 1fr;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .cartlist {
+        display: grid;
+        grid-template-columns: 40% 10% 10% 20% 20%;
+        margin: 10px 0 10px 0;
+        grid-template-rows: 1fr;
+        text-align: center;
+        button {
+            margin: 0 0.5rem 0 0.5rem;
+        }
+    }
+    .cartend {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 1fr;
+        text-align: center;
+    }
+    .cartbutton {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        ;
+        button {
+            width: 200px;
+            margin: 40px 0 20px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .product {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 90px 1fr;
+        h1 {
+            opacity: 0;
+            font-size: 0px;
+            font-weight: 100;
+            margin-top: 10px;
+            grid-area: 2/2/2/2;
+            text-align: center;
+            animation: Mdheading 1s ease-in-out forwards;
+            animation-iteration-count: 1;
+        }
+        button {
+            opacity: 0;
+            margin-top: 10px;
+            animation: Mdbutton 1s ease-in-out forwards;
+            animation-iteration-count: 1;
+            animation-delay: 0.5s;
+        }
+        input {
+            opacity: 0;
+            margin-top: 40px;
+            grid-area: 2/2/2/2;
+            height: 50px;
+            font-size: 45px;
+            width: 0px;
+            animation: Mdinput 1s ease-in-out forwards;
+            animation-delay: 0.5s;
+            animation-iteration-count: 1;
+        }
+        .cardbox {
+            grid-area: 2/2/2/2;
+            h1 {
+                font-size: 7px;
+            }
+            .addFaker {
+                height: 25px;
+                width: 100px;
+                margin-top: 10px;
+                font-size: 1.25rem;
+                line-height: 25px;
+                border-radius: 25px;
+            }
+            mat-form-field {
+                opacity: 0;
+                margin-top: 10px;
+                width: 0px;
+                animation: Mdselect 1s ease-in-out forwards;
+                animation-delay: 0.5s;
+                animation-iteration-count: 1;
+            }
+            .boxinside {
+                animation: MdcardAll 2s forwards;
+                opacity: 0;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: 1;
+                h2 {
+                    font-size: 1rem;
+                    opacity: 0;
+                    animation: Mdheading2 1s forwards ease-in-out;
+                    animation-delay: 0.5s;
+                    animation-iteration-count: 1;
+                }
+                p {
+                    font-size: 0.5rem;
+                    opacity: 0;
+                    animation: Mdptag 1s forwards ease-in-out;
+                    animation-delay: 0.5s;
+                    animation-iteration-count: 1;
+                }
+            }
+            .card {
+                opacity: 0;
+                margin: 20px;
+                padding: 5px;
+                height: 500px;
+                width: 400px;
+                background-color: ghostwhite;
+                animation: Mdcard 1s ease-in-out;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+                animation-delay: 0.5s;
+            }
+            img {
+                opacity: 0;
+                height: 0px;
+                animation: Mdimage 1s forwards ease-in-out;
+                animation-delay: 0.5s;
+                animation-iteration-count: 1;
+            }
+            button {
+                height: 15px;
+                margin: 2.5px;
+                width: 100%;
+            }
+        }
+    }
+    @keyframes Mdheading {
+        0% {
+            opacity: 0;
+            font-size: 2px;
+            font-weight: 200;
+        }
+        61% {
+            font-size: 7px;
+            font-weight: 420;
+        }
+        100% {
+            opacity: 1;
+            font-size: 15px;
+            font-weight: 800;
+        }
+    }
+    @keyframes Mdheading2 {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes Mdptag {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            font-size: 0.3rem;
+        }
+    }
+    @keyframes Mdinput {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+    @keyframes Mdselect {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+    @keyframes MdcardAll {
+        0% {
+            opacity: 0;
+        }
+        61% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes Mdcard {
+        0% {
+            height: 2px;
+            opacity: 0;
+        }
+        61% {
+            height: 2px;
+            width: 100px;
+        }
+        100% {
+            opacity: 1;
+            height: 500px;
+            width: 400px;
+        }
+    }
+    @keyframes Mdimage {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            height: 100px;
+            width: auto;
+        }
+    }
+    @keyframes Mdbutton {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    mat-icon {
+        height: 40px;
+        width: 40px;
+        font-size: 25px;
+        line-height: 35px;
+        border: 4px solid rgb(20, 92, 224);
+    }
+    mat-icon:hover {
+        border: 2px solid rgb(23, 180, 228);
+    }
+    .cart {
+        height: 500px;
+        width: 400px;
+        .cartTitle {
+            font-size: 1.5rem;
+        }
+        .cartlist {
+            margin: 5px 0 5px 0;
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 0.5rem;
+            }
+            button {
+                width: 30px;
+                margin: 0 0.25rem 0 0.25rem;
+            }
+        }
+        .cartbutton {
+            button {
+                width: 100px;
+                margin: 10px 0 5px 0;
+            }
+        }
+    }
+}

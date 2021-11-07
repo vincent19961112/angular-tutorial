@@ -1,0 +1,23 @@
+<div class="card-detail">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{product.productName}}</mat-card-title>
+            <mat-card-subtitle> price:{{product.price}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <img src="{{product.Image}}" alt="" srcset="">
+            <h2>department:</h2>
+            <p>{{product.department}}</p>
+            <h2>Adjective:</h2>
+            <p>{{product.productAdjective}}</p>
+            <h2>Material:</h2>
+            <p>{{product.productMaterial}}</p>
+            <h2>Description:</h2>
+            <p>{{product.productDescription}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button color="warn" (click)="back()">back to shopping</button>
+            <button mat-flat-button color="primary" (click)="addtoCart(product)">add to cart</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

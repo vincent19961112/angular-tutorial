@@ -1,0 +1,11 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="center center" color="warn">
+    <button mat-flat-button color="warn"> <h1  routerLink="/gallery">{{ title }}</h1></button>
+    <div fxFlex="20%" *ngIf="(user|async)?.uid">
+        <button mat-flat-button color="warn" routerLink="/upload">Upload</button>
+    </div>
+    <span fxFlex></span>
+    <div fxFlex="10%">
+        <button mat-flat-button color="warn" *ngIf="!(user|async)?.uid" routerLink="/login">Log In</button>
+        <button mat-flat-button color="warn" *ngIf="(user|async)?.uid" (click)="logout()">Log Out</button>
+    </div>
+</mat-toolbar>

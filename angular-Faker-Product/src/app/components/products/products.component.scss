@@ -1,0 +1,99 @@
+    .product {
+        .list {
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 500;
+                font-style: italic;
+                margin-top: 5rem;
+                text-align: center;
+            }
+            height: 800px;
+            width: 200px;
+            border-radius: 25px;
+            margin: 0 20px;
+            transition: 0.5s ease-in-out;
+            .listitem {
+                margin-top: 20px;
+                height: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 25px;
+                flex: auto;
+                cursor: pointer;
+                transition: 0.5s ease-in-out;
+                background-color: rgb(14, 153, 195);
+                box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset 5px 5px 5px rgba(255, 255, 255, 0.05), 5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+            }
+            .listitem:hover {
+                background-color: rgb(11, 104, 133);
+                box-shadow: inset -5px -5px 5px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.05), inset 5px 5px 5px rgba(255, 255, 255, 0.05), 5px 5px 5px rgba(0, 0, 0, 0.05);
+            }
+        }
+        .card {
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            .cardcontent {
+                height: 40rem;
+                padding: 10px;
+                margin: 1rem;
+                color: white;
+                position: relative;
+                border-radius: 30px;
+                transition: 0.5s ease-in-out;
+                background: rgb(129, 153, 151);
+                box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset 5px 5px 5px rgba(255, 255, 255, 0.05), 5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+                .cardtitle {
+                    margin: 2em 0 1em;
+                    text-align: center;
+                    font-size: 2em;
+                    transition: 0.5s ease-in-out;
+                }
+                .carddetail {
+                    max-width: 24rem;
+                    transition: 0.5s ease-in-out;
+                    img {
+                        margin: 0.5em 0 0 0;
+                        width: 100%;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    p {
+                        text-align: center;
+                        font-weight: 100;
+                        font-size: 1rem;
+                    }
+                }
+                .cardbutton {
+                    position: absolute;
+                    bottom: 5%;
+                    right: 10%;
+                    transition: 0.5s ease-in-out;
+                    button {
+                        background-color: darkgray;
+                        margin-left: 5px;
+                    }
+                }
+            }
+            .cardcontent:hover {
+                box-shadow: inset -5px -5px 5px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.05), 5px 5px 5px rgba(255, 255, 255, 0.05), 5px 5px 5px rgba(0, 0, 0, 0.05);
+                background: rgb(3, 89, 129);
+                .cardtitle {
+                    color: rgb(37, 211, 211);
+                }
+                .carddetail {
+                    color: rgb(37, 211, 211);
+                }
+                .cardbutton {
+                    bottom: 10%;
+                    button {
+                        background-color: rgb(30, 42, 146);
+                        color: rgb(37, 211, 211);
+                    }
+                }
+            }
+        }
+    }

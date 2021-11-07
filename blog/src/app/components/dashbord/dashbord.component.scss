@@ -1,0 +1,29 @@
+@import '../../app.component.scss';
+$image:url('../../../assets/image/eaters-collective-12eHC6FxPyg-unsplash.jpg');
+.dashboard {
+    height: Height(100);
+    background-image: BackgroundImage($image);
+    @include backgroundSet();
+    .dashbord-card {
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        height: 50vh;
+        width: 50vw;
+        h1 {
+            color: Color(black);
+            font-size: fontSize(8);
+        }
+        mat-tab-group {
+            margin-top: Margin(10);
+            width: 30vw;
+        }
+        mat-card {
+            height: 50vh;
+            background-color: unset;
+            p {
+                font-size: fontSize(2);
+            }
+        }
+    }
+}

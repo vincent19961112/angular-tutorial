@@ -1,0 +1,32 @@
+    @import '../../app.component.scss';
+    mat-toolbar {
+        position: sticky;
+        height: Height(8);
+        @include MD();
+    }
+    
+    mat-toolbar-row {
+        height: Height(8);
+    }
+    
+    .nav {
+        margin-right: 50px;
+    }
+    
+    .logo {
+        flex: auto;
+        margin-left: 1rem;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    @media screen and (max-width: 540px) {
+        .nav {
+            display: none;
+        }
+        .menu {
+            display: block;
+        }
+    }

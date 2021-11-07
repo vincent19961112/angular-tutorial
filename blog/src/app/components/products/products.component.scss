@@ -1,0 +1,55 @@
+@import '../../app.component.scss';
+.container {
+    position: relative;
+    height: Height(92);
+    .sidenav {
+        width: 35vw;
+        background-color: violet;
+        .sidenav-card {
+            width: 100%;
+            height: Height(92);
+            @include FlexCCC();
+            table {
+                background-color: unset;
+                width: 80%;
+            }
+        }
+        mat-paginator {
+            background-color: unset;
+            width: 80%;
+        }
+        button {
+            width: 80%;
+        }
+    }
+    .sidenav-content {
+        .sidenav-form-center {
+            @include FlexCSC();
+            .sidenav-form {
+                width: 500px;
+                form {
+                    margin-top: Margin(5);
+                    width: 500px;
+                }
+            }
+        }
+        .sidenav-card-row {
+            @include FlexRCC();
+            flex-wrap: wrap;
+            mat-card {
+                width: 29%;
+                margin: Margin(2);
+            }
+        }
+    }
+}
+
+.cart {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    cursor: pointer;
+    color: violet;
+    outline-width: 20px;
+    font-size: fontSize(5);
+}

@@ -1,0 +1,40 @@
+<div class="edit">
+
+    <div class="cardbox">
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <h1>Edit Food</h1>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div class="boxinside">
+            <div class="card" *ngFor="let product of Product">
+                <mat-form-field>
+                    <input matInput placeholder="Productname" [(ngModel)]="product.Productname">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="price" [(ngModel)]="product.price">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="image" [(ngModel)]="product.image">
+                </mat-form-field>
+                <mat-form-field>
+                    <textarea matInput placeholder="description" [(ngModel)]="product.description"></textarea>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="color" [(ngModel)]="product.color">
+                </mat-form-field>
+            </div>
+
+            <div class="card" *ngFor="let product of Product">
+                <img src="{{product.image}}" alt="" srcset="">
+                <h2>name:{{product.Productname}}</h2>
+                <p>price:{{product.price}}</p>
+                <p>image:{{product.image}}</p>
+                <p>description:{{product.description}}</p>
+                <p>color:{{product.color}}</p>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" (click)="getProductId(Product)">submit</button>
+
+    </div>
+</div>

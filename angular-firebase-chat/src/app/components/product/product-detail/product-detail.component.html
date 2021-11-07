@@ -1,0 +1,12 @@
+<div class="product">
+    <h1>Product detail</h1>
+    <div class="cardbox">
+        <div class="card" *ngFor="let product of Product|async">
+            <img src="{{product.image}}" alt="" srcset="">
+            <h2>name:{{product.Productname}}</h2>
+            <p>price:{{product.price}}</p>
+            <p>description:{{product.description}}</p>
+            <p>color:{{product.color}}</p>
+        </div>
+    </div>
+</div>

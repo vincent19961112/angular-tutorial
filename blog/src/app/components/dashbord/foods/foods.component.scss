@@ -1,0 +1,31 @@
+@import '../../../app.component.scss';
+$image:url('../../../../assets/image/brooke-lark-wMzx2nBdeng-unsplash.jpg');
+.food {
+    position: relative;
+    height: Height(100);
+    background-image: BackgroundImage($image);
+    @include backgroundSet();
+    .food-card {
+        @include PN55();
+        height: 70%;
+        width: 80%;
+        mat-grid-tile {
+            font-size: fontSize(0);
+            color: Color();
+            cursor: pointer;
+            @include backgroundSet();
+            background-size: 100%;
+            transition: 0.5s;
+            &:hover {
+                font-size: 50px;
+                background-size: 90%;
+            }
+            p {
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

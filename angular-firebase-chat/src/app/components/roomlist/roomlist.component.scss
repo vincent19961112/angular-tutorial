@@ -1,0 +1,131 @@
+@import '../../app.component.scss';
+.roomlist {
+    @include Gird;
+    .chatbox {
+        grid-area: span 1/2;
+        background: linear-gradient(90deg, rgba(104, 128, 123, 1) 2%, rgba(165, 176, 236, 1) 24%, rgba(77, 114, 117, 0.9752275910364145) 84%);
+        @include FlexCCC;
+        .users {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2px;
+        }
+    }
+    .card {
+        position: relative;
+        height: 800px;
+        width: 1200px;
+        background-color: burlywood;
+        h1 {
+            position: absolute;
+            top: 5%;
+            left: 2%;
+            align-self: flex-start;
+            margin-top: 20px;
+            font-size: 50px;
+            font-weight: 800;
+            font-style: italic;
+            color: white;
+        }
+        h2 {
+            position: absolute;
+            top: 10%;
+            left: 2%;
+            align-self: flex-start;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 800;
+            font-style: italic;
+            color: white;
+        }
+        ul {
+            position: absolute;
+            top: 16%;
+            width: 100%;
+            @include FlexCCS;
+            list-style-type: none;
+            .addroom {
+                background-color: rgb(33, 30, 192);
+                color: rgb(39, 156, 160);
+                font-size: 30px;
+                font-weight: 650;
+                margin-top: 10px;
+                margin-bottom: 25px;
+            }
+            .addroom:hover {
+                background-color: rgb(33, 30, 233);
+                color: rgb(57, 225, 231);
+            }
+            .addroom:focus {
+                outline-style: none;
+            }
+            li {
+                width: 95%;
+                height: 40px;
+                line-height: 40px;
+                margin: 5px;
+                cursor: pointer;
+                text-align: center;
+                background-color: grey;
+                font-size: 25px;
+                font-weight: 550;
+                color: white;
+                justify-self: flex-start;
+                align-self: flex-start;
+                transition: 0.3s ease-in-out;
+            }
+            li:hover {
+                background-color: rgb(163, 163, 163);
+                color: whitesmoke;
+            }
+            li:focus {
+                outline-style: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .roomlist {
+        @include MdGird;
+        .chatbox {
+            grid-area: 2/2/2/2;
+            width: 100vw;
+            .users {
+                width: 25px;
+                height: 25px;
+                font-size: 1.2px;
+            }
+        }
+        .card {
+            height: 400px;
+            max-width: 400px;
+            h1 {
+                margin-top: 10px;
+                font-size: 25px;
+                font-weight: 650;
+            }
+            h2 {
+                margin-top: 10px;
+                font-size: 10px;
+                font-weight: 650;
+            }
+            ul {
+                .addroom {
+                    font-size: 15px;
+                    font-weight: 650;
+                    margin-top: 5px;
+                    margin-bottom: 12.5px;
+                }
+                li {
+                    width: 95%;
+                    height: 20px;
+                    line-height: 20px;
+                    margin: 2.5px;
+                    font-size: 12.5px;
+                    font-weight: 550;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<div class="roomlist">
+    <div class="chatbox">
+        <div class="card">
+            <h1>個人資料</h1>
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)" [formGroup]='FormGroup' required>
+                <mat-form-field>
+                    <mat-label>姓名</mat-label>
+                    <input matInput type="text" placeholder="輸入姓名" name="name" [(ngModel)]="name" formControlName='name' required>
+                    <mat-error *ngIf="FormGroup.controls.name.hasError('required')">
+                        姓名<strong>必填!</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="SelectCity">
+                    <mat-label>縣市</mat-label>
+                    <mat-select name="city" [(ngModel)]="city" [ngModelOptions]="{standalone: true}" (ngModelChange)="cityChanged($event)">
+                        <mat-option *ngFor="let ct of All_cities" [value]='ct'>{{ct}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="SelectCity">
+                    <mat-label>鄉鎮市</mat-label>
+                    <mat-select name="site_id" [(ngModel)]="site_id" [ngModelOptions]="{standalone: true}" (ngModelChange)="siteChanged($event)">
+                        <mat-option *ngFor="let st_id of All_site_id" [value]='st_id'>{{st_id}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>地址</mat-label>
+                    <input matInput type="text" placeholder="輸入地址" name='address' [(ngModel)]="address" formControlName='address' required>
+                    <mat-hint>輸入完整地址謝謝</mat-hint>
+                    <mat-error *ngIf="FormGroup.controls.address.hasError('required')">
+                        請輸入地址
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>信箱</mat-label>
+                    <input matInput type="email" placeholder="輸入信箱" name="email" [(ngModel)]="email" formControlName='email' required>
+
+                    <mat-error *ngIf="FormGroup.controls.email.hasError('email')">
+                        請輸入信箱<strong>格式</strong>
+                    </mat-error>
+                    <mat-error *ngIf="FormGroup.controls.email.hasError('required')">
+                        信箱<strong>必填!</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>電話</mat-label>
+                    <span matPrefix>02- &nbsp;</span>
+                    <input matInput type="phone" placeholder="輸入電話 " name="phone " [(ngModel)]="phone" maxlength="8 " formControlName='phone' required>
+                    <mat-error *ngIf="FormGroup.controls.phone.hasError('required')">
+                        手機<strong>必填!</strong>
+                    </mat-error>
+                    <mat-error *ngIf="FormGroup.controls.phone.hasError('pattern')">
+                        請輸入<strong>數字</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>電話</mat-label>
+                    <span matPrefix>09- &nbsp;</span>
+                    <input matInput type="phone" placeholder="輸入室話 " name="telphone " [(ngModel)]="telphone" maxlength="8" formControlName='telphone' required>
+                    <mat-error *ngIf="FormGroup.controls.telphone.hasError('pattern')">
+                        請輸入<strong>數字</strong>
+                    </mat-error>
+                    <mat-error *ngIf="FormGroup.controls.telphone.hasError('required')">
+                        市話<strong>必填!</strong>
+                    </mat-error>
+                </mat-form-field>
+                <button type="submit " [disabled]="!form.valid
+                 || FormGroup.controls.telphone.hasError('pattern')
+                 || FormGroup.controls.phone.hasError('pattern')" mat-raised-button>{{form.valid}}</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="loginbg">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Log In</mat-card-title>
+            <mat-card-subtitle>wellcome to Mygallery</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form #loginForm="ngForm">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput class="form-control" #emailControl="ngModel" [(ngModel)]="email" placeholder="Email" type="email" name="email" maxlength="70" email required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput class="form-control" #passwordControl="ngModel" placeholder="Password" [(ngModel)]="password" type="password" name="password" maxlength="70" required>
+                </mat-form-field>
+                <mat-error *ngIf="errorMsg">{{errorMsg}}</mat-error>
+                <button mat-flat-button [disabled]="!loginForm.form.valid" type="submit" (click)="signIn()" color="primary">Sign In</button>
+                <button mat-flat-button (click)="signIn()" color="warn">Sign In with Google</button>
+            </form>
+
+        </mat-card-content>
+
+    </mat-card>
+</div>

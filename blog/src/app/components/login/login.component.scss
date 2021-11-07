@@ -1,0 +1,39 @@
+@import '../../app.component.scss';
+$image:url('../../../assets/image/brooke-lark-wMzx2nBdeng-unsplash.jpg');
+.login {
+    height: Height(92);
+    width: 100%;
+    background-image: BackgroundImage($image);
+    @include backgroundSet();
+    mat-card {
+        @include PN55();
+        background-color: unset;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, .5);
+        color: Color(rgb(29, 27, 27));
+        span {
+            font-size: fontSize(5);
+            font-weight: 650;
+        }
+        @include FlexCCC();
+        height: Height(70);
+        width: 50vw;
+        mat-label {
+            color: Color(#1653a3);
+        }
+        input {
+            color: Color(white);
+        }
+        mat-form-field {
+            color: Color(white);
+            width: Width(5);
+            margin-top: Margin(2.5);
+        }
+        button {
+            background-color: rgb(129, 15, 149);
+            color: Color();
+            height: Height(5);
+            margin-top: Margin(5.5);
+            width: Width(5);
+        }
+    }
+}

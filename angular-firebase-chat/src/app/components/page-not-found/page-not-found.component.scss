@@ -1,0 +1,43 @@
+mat-grid-tile {
+    background: linear-gradient(45deg, #8500ff, #5acaff);
+}
+
+#Height404 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('../../../assets/image/p404.png');
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .5);
+    line-height: normal;
+    min-width: 500px;
+    min-height: 800px;
+}
+
+h1 {
+    color: #fff;
+    line-height: 1em;
+    font-size: 15rem;
+}
+
+h4 {
+    color: #111;
+    background: #fff;
+    font-weight: 300;
+    line-height: 100px;
+    min-width: 1000px;
+    min-height: 100px;
+    display: inline-block;
+    font-size: 3.5em;
+}
+
+p {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.content {
+    width: 400px;
+}

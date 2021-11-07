@@ -1,0 +1,73 @@
+<div class="product">
+    <div class="cardbox">
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <h1>Food Product</h1>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <ng-container *ngIf="boss">
+            <div class="addFaker" (click)="fakerProduct()">add faker food</div>
+        </ng-container>
+        <mat-form-field>
+            <mat-select [(value)]='type' equired>
+                <mat-option *ngFor="let type of selectTypes" [value]="type">
+                    {{type}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <input type="text" [(ngModel)]="search" (keyup)="Search(search)">
+        <div class="boxinside">
+            <div class="card" *ngFor="let product of Products">
+                <img src="{{product.image}}" alt="{{product.image}}">
+                <h2>Product:{{product.Productname}}</h2>
+                <p>price:{{product.price}}</p>
+                <p>description:{{product.description}}</p>
+                <p>color:{{product.color}}</p>
+                <ng-container *ngIf="boss; else customer">
+                    <div>
+                        <button routerLink="/edit/{{product.id}}" type="submit">edit</button>
+                    </div>
+                </ng-container>
+                <ng-template #customer>
+                    <button routerLink="/detail/{{product.id}}" type="submit">detail</button>
+                    <button type="submit" (click)="addCart(product)">add</button>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cart -->
+<ng-container *ngIf="clickcart; else elseTemplate">
+
+    <mat-icon (click)="cartion()">add_shopping_cart</mat-icon>
+    <div class="cart">
+        <h1>Cart List</h1>
+        <div class="cartTitle">
+            <h3>title</h3>
+            <h3>price</h3>
+            <h3>count</h3>
+            <h3>opations</h3>
+            <h3>total</h3>
+        </div>
+        <div *ngFor="let cart of carts" class="cartlist">
+            <h1>{{cart.Productname}}</h1>
+            <p>${{cart.price}}</p>
+            <p>{{cart.count}}</p>
+            <div class="buttongroup">
+                <button mat-raised-button color="primary" (click)="addcount(cart)">+</button>
+                <button mat-raised-button color="warn" (click)="decCount(cart)">-</button>
+            </div>
+            <p>{{cart.price*cart.count}}</p>
+        </div>
+        <div class="cartend">
+            <h2>Alltotal:</h2>
+            <h1>${{total}}</h1>
+        </div>
+        <div class="cartbutton">
+            <button mat-raised-button color="primary" routerLink="/checkout">checkout</button>
+        </div>
+    </div>
+</ng-container>
+<ng-template #elseTemplate>
+    <mat-icon *ngIf="!boss" (click)="cartion()">shopping_cart</mat-icon>
+</ng-template>

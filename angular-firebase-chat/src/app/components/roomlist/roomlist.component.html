@@ -1,0 +1,13 @@
+<div class="roomlist">
+    <div class="chatbox">
+        <div class="card">
+            <h1>房名</h1>
+            <h2>歡迎 {{nickname}}</h2>
+            <ul>
+                <li class="addroom" routerLink="/addroom">add room</li>
+                <li (click)="enterChatRoom(room.roomname)" *ngFor="let room of hasrooms">{{room.roomname}}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
